@@ -8,6 +8,6 @@ namespace ConsoleApp_Noite.Heranca
 {
     public class Bike : Veiculo
     {
-        public int velocidadeMaximaEmKmH;
+        public int qtdMarchas;
     }
 }

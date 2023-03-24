@@ -17,23 +17,19 @@ namespace ConsoleApp_Noite
         private string Cidade;
         private string Estado;
 
-        public Endereco(string rua, string numero
-                        ,string bairro, string cep,
-                            string cidade,string estado
-            )
-        {
+        public Endereco(string rua, string numero,string bairro, string cep,string cidade,string estado){
             Rua = rua;
             Numero = numero;
             Bairro = bairro;
             Cep = cep;
             Cidade = cidade;
             Estado = estado;
-    }
+        }
 
 
         public string EnderecoCompleto()
         {
-            return Rua + ", " + Numero + " Bairro:" + Bairro + " Cidade: " + Cidade + "/" + Estado;
+            return Rua + ", " + Numero + " Bairro: " + Bairro + " Cidade: " + Cidade + "/" + Estado;
         }
 
         public string EnderecoCurto()

@@ -13,57 +13,48 @@ namespace ConsoleApp_Noite
         private string Telefone;
         private Endereco Endereco;
 
-        public Cliente(int id,
-                        string nome,
-                            string telefone,
-                                Endereco endereco)
-        {
+        public Cliente(int id,string nome,string telefone,Endereco endereco){
             Id = id;
             Nome = nome;
             Telefone = telefone;
             Endereco = endereco;
         }
 
-        public void setEndereco(Endereco endereco)
-        {
+        public void setEndereco(Endereco endereco){
             Endereco = endereco;
         }
 
-        public Endereco getEndereco()
-        {
+        public Endereco getEndereco(){
             return Endereco;
         }
 
-        public void setNome(string nome)
-        {
-            if(nome != "")
-            {
+        public void setNome(string nome){
+            if(nome != ""){
                 Nome = nome;
             }
         }
-        public string getNome()
-        {
+        public string getNome(){
             return Nome;
         }
 
-        public int getId()
-        {
+        public int getId(){
             return Id;
         }
 
-        public void setId(int id)
-        {
+        public void setId(int id){
             Id = id;
         }
 
-        public string getTelefone()
-        {
+        public string getTelefone(){
             return Telefone;
         }
 
-        public void setTelefone(string telefone)
-        {
+        public void setTelefone(string telefone){
             Telefone = telefone;
+        }
+
+        public string getDados(){
+            return $"Cliente ID: {Id}\nNome: {Nome}\nEndereço: {Endereco.EnderecoCompleto()}\n";
         }
     }
 }

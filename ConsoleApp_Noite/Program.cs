@@ -1,26 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-using ConsoleApp_Noite;
+﻿using ConsoleApp_Noite;
 using ConsoleApp_Noite.Heranca;
 
-Console.WriteLine("Hello, World!");
-
-Produto p1 = new Produto(1, 10.90M, "Cervejinha");
-
-Console.WriteLine(p1.getDescricao()+" "+p1.getId());
-
-
-p1.setValor(11.85M);
-p1.setDescricao("Cerveja Skol 1 litrão");
-
-Console.WriteLine(p1.getDescricao() + " " + p1.getValor());
-
-Endereco endereco = new Endereco(
-    "Rua Mario Miziara",
-    "91",
-    "Sobral",
-    "15906304",
-    "Taquaritinga",
-    "SP");
+Endereco endereco = new Endereco("Rua Mario Miziara","91","Sobral","15906304","Taquaritinga","SP");
 
 Cliente c1 = new Cliente(1, "Gabriele", "991340447", endereco);
 Cliente c2 = new Cliente(2, "Gabriela", "991340447",endereco);
@@ -28,75 +9,55 @@ Cliente c3 = new Cliente(3, "Ryan", "991340447", endereco);
 Cliente c4 = new Cliente(4, "Fernanda", "991340447", endereco);
 Cliente c5 = new Cliente(5, "Giovanni", "991340447", endereco);
 
-Console.WriteLine( c2.getEndereco().getRua() + " "+c2.getEndereco().getNumero() );
+// 1 - Imprima na tela todos os clientes desse contexto;
+Console.WriteLine("\n\nClientes: ");
+List<Cliente> clientes = new(new Cliente[] { c1, c2, c3, c4, c5 });
+foreach (Cliente cliente in clientes){
+    Console.WriteLine(cliente.getDados());
+}
 
-c2.getEndereco().setNumero("135");
+// 2 - Crie uma lista com 560 produtos
+Console.WriteLine("\n\nProdutos: ");
+List<Produto> produtos = new List<Produto>();
+for(int i = 1; i <= 560; i++){
+    Produto prod = new Produto(i, i * 5, "Item " + i);
+    produtos.Add(prod);
+    Console.WriteLine(prod.getDados());
+}
 
-Console.WriteLine(c2.getEndereco().getNumero());
-Console.WriteLine(c2.getEndereco().EnderecoCompleto());
+// 3 - Crie uma lista que aceite qualquer tipo de veiculo
+Console.WriteLine("\n\nVeiculos: ");
+Carro jetta = new Carro();
+jetta.temMotor = true;
+jetta.numeroPortas = 4;
+jetta.numeroAssentos = 5;
+jetta.fabricante = "Volkswagen";
+jetta.cintoSeguranca = true;
+jetta.arCondicionado = true;
+jetta.velocidadeMaximaEmKmH = 210;
 
-c2.getEndereco().EnderecoCompleto();
+Carro m5 = new Carro();
+m5.temMotor = true;
+m5.numeroPortas = 4;
+m5.numeroAssentos = 5;
+m5.fabricante = "BMW";
+m5.cintoSeguranca = true;
+m5.arCondicionado = true;
+m5.velocidadeMaximaEmKmH = 250;
 
-Carro gol = new Carro();
-gol.temMotor = true;
-gol.numeroPortas = 4;
-gol.numeroAssentos = 5;
+Bike first = new Bike();
+first.temMotor = false;
+first.numeroPortas = 0;
+first.numeroAssentos = 1;
+first.qtdMarchas = 11;
 
 Bike caloi = new Bike();
 caloi.temMotor = false;
 caloi.numeroPortas = 0;
 caloi.numeroAssentos = 1;
+caloi.qtdMarchas = 21;
 
-gol.fabricante = "VW";
-gol.cintoSeguranca = true;
-gol.arCondicionado = false;
-
-Carro Saveiro = new Carro();
-Carro Palio = new Carro();
-Carro Uno = new Carro();
-
-Saveiro.fabricante = "VW";
-Palio.fabricante = "Fiat";
-Uno.fabricante = "Fiat";
-
-Bike speed = new Bike();
-speed.temMotor = false;
-speed.numeroPortas = 0;
-speed.numeroAssentos = 1;
-// Faça uma ação chamada ExibirDados e
-// mostre as informações na tela pelo Console.Writeline
-Console.WriteLine( speed.ExibirDados() );
-Console.WriteLine( gol.ExibirDados() );
-
-
-
-List<Carro> listaCarros = new List<Carro>();
-listaCarros.Add(gol);
-listaCarros.Add(Palio);
-listaCarros.Add(Uno);
-listaCarros.Add(Saveiro);
-
-Console.WriteLine(listaCarros[0].fabricante);
-listaCarros.Remove(Palio);
-
-for (int i = 0; i < listaCarros.Count; i++)
-{
-    Console.WriteLine(listaCarros[i].ExibirDados());
+List<Veiculo> veiculos = new(new Veiculo[] { jetta, m5, first, caloi });
+foreach(Veiculo veiculo in veiculos){
+    Console.WriteLine(veiculo.ExibirDados());
 }
-
-foreach (var item in listaCarros)
-{
-    Console.WriteLine(item.ExibirMarca());
-}
-
-
-//Imprima na tela todos os clientes desse contexto;
-//Dica crie uma lista para eles.
-
-
-//Crie uma lista com 560 produtos
-//Imprima na tela
-
-//Crie uma lista que aceite qualquer tipo de veiculo
-//Imprimam na tela
-

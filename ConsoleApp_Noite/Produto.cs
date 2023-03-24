@@ -45,5 +45,9 @@ namespace ConsoleApp_Noite
         {
             return Valor;
         }
+
+        public string getDados(){
+            return $"Produto ID: {Id}\nDescricao: {Descricao}\nValor: {Valor}\n";
+        }
     }
 }

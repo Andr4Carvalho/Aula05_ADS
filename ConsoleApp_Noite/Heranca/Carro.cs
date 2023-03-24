@@ -10,7 +10,7 @@ namespace ConsoleApp_Noite.Heranca
     {
         public bool cintoSeguranca;
         public bool arCondicionado;
-        public string marcaRadio;
+        public int velocidadeMaximaEmKmH;
         public string fabricante;
 
         public  string ExibirMarca()
